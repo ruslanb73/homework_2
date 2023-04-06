@@ -1,9 +1,6 @@
 import config.ApiConfig;
-import crud.steps.Steps;
-import io.qameta.allure.Story;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 
 public class BaseTests extends ApiConfig {
-
+    public final String POKEMON_RATTATA = "rattata";
+    public final String POKEMON_PIDGEOTTO = "pidgeotto";
 }

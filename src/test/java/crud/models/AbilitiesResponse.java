@@ -1,21 +1,28 @@
 package crud.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AbilitiesResponse {
-    private Boolean isHidden;
+    @JsonProperty("ability")
     private Ability ability;
-    private Integer slot;
-
 
     @Data
-    @Builder
-    public static class Ability{
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public class Ability {
         private String name;
-        private String url;
+
+
     }
 }

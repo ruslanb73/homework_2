@@ -53,7 +53,6 @@ public class Steps extends ApiConfig {
                 .get(POCEMON)
                 .then()
                 .assertThat()
-                .log().all()
                 .statusCode(200)
                 .extract()
                 .jsonPath().getList("results", ResultsResponse.class);

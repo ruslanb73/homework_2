@@ -74,9 +74,10 @@ public class Tests extends BaseTests {
     @DisplayName("Проверка в списке покемонов наличия имени")
     @Test
     public void presenceNamePokemonListTest() {
-        List<ResultsResponse> resultsResponses = getResultsResponseList(20);
-        System.out.println(resultsResponses);
-        resultsResponses.forEach(x -> Assertions.assertTrue(x.getName().contains(x.getName())));
+        List<ResultsResponse> resultsResponses = getResultsResponseList(30);
+        for (int i = 0; i < resultsResponses.size(); i++) {
+            Assertions.assertNotNull(resultsResponses.get(i).getName(), "Имя отсутствует ");
+        }
     }
 
     @DisplayName("Проверка ошибки ввода имени покемона ")
